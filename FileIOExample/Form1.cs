@@ -12,7 +12,7 @@ namespace FileIOExample
             using OpenFileDialog openFileDialog = new();
             // Start in the "My Documents" folder
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            openFileDialog.Filter = "Joe files (*.joe)|*.joe";
+            openFileDialog.Filter = "Text files (*.txt)|*.txt";
             openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
 
