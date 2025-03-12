@@ -13,14 +13,16 @@ namespace FileIOExample
             // Start in the "My Documents" folder
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             openFileDialog.Filter = "Text files (*.txt)|*.txt";
-            openFileDialog.FilterIndex = 1;
             openFileDialog.RestoreDirectory = true;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // Code to handle the file open
                 string filePath = openFileDialog.FileName;
-                // Add your file handling code here
+                // Read the file content into a string
+                string fileContents = File.ReadAllText(filePath);
+                // You can now use the fileContent string as needed
+                MessageBox.Show(fileContents, "File Content");
             }
         }
     }
