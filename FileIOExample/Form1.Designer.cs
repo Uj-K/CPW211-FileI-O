@@ -32,6 +32,7 @@
             fileToolStripMenuItem = new ToolStripMenuItem();
             openFileToolStripMenuItem = new ToolStripMenuItem();
             saveFileToolStripMenuItem = new ToolStripMenuItem();
+            txbOriginal = new TextBox();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,22 +55,32 @@
             // openFileToolStripMenuItem
             // 
             openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            openFileToolStripMenuItem.Size = new Size(180, 22);
+            openFileToolStripMenuItem.Size = new Size(134, 22);
             openFileToolStripMenuItem.Text = "Open File...";
             openFileToolStripMenuItem.Click += openFileToolStripMenuItem_Click;
             // 
             // saveFileToolStripMenuItem
             // 
             saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
-            saveFileToolStripMenuItem.Size = new Size(180, 22);
+            saveFileToolStripMenuItem.Size = new Size(134, 22);
             saveFileToolStripMenuItem.Text = "Save File...";
             saveFileToolStripMenuItem.Click += saveFileToolStripMenuItem_Click;
+            // 
+            // txbOriginal
+            // 
+            txbOriginal.Location = new Point(46, 51);
+            txbOriginal.Multiline = true;
+            txbOriginal.Name = "txbOriginal";
+            txbOriginal.ReadOnly = true;
+            txbOriginal.Size = new Size(110, 83);
+            txbOriginal.TabIndex = 1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txbOriginal);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
@@ -86,5 +97,6 @@
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem openFileToolStripMenuItem;
         private ToolStripMenuItem saveFileToolStripMenuItem;
+        private TextBox txbOriginal;
     }
 }

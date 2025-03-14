@@ -4,7 +4,7 @@ namespace FileIOExample
 {
     public partial class Form1 : Form
     {
-        
+
 
         public Form1()
         {
@@ -15,9 +15,11 @@ namespace FileIOExample
         {
             using OpenFileDialog openFileDialog = new();
             // Start in the "My Documents" folder.
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            openFileDialog.Filter = "Text files (*.txt)|*.txt";
-            openFileDialog.RestoreDirectory = true;
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); // 처음 시작할때 어느 폴더에서 열지 설정
+            openFileDialog.Filter = "Text files (*.txt)|*.txt"; // 어떤 종류의 파일들을 보여줄지 설정. 여기서는 txt 파일만 보여줌.
+            // openFileDialog.FilterIndex = 1 만약 위의  Filter가 여러개일 경우 어떤것들 default로 보여줄지 선택. 근데 우리는 txt 하나니까 필요없어서 삭제.
+            openFileDialog.RestoreDirectory = true; // 마지막으로 열었던 폴더를 기억하고 다음에 다시 열때 그 폴더에서 열게함.
+
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -25,8 +27,8 @@ namespace FileIOExample
                 string filePath = openFileDialog.FileName;
                 // Read the file content into a string.
                 string fileContents = File.ReadAllText(filePath);
-                // Display file content in a message box.
-                MessageBox.Show(fileContents, "File Content");
+                // Display file content in a text box.
+                txbOriginal.Text = fileContents;
             }
         }
 
