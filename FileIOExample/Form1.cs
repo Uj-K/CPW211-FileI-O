@@ -28,7 +28,7 @@ namespace FileIOExample
                 // Read the file content into a string.
                 string fileContents = File.ReadAllText(filePath);
                 // Display file content in a text box.
-                txbOriginal.Text = fileContents;
+                textbox.Text = fileContents;
             }
         }
 
@@ -47,7 +47,7 @@ namespace FileIOExample
                 // Example content to save.
                 string fileContents = "This is an example content to save in the file.";
                 // Write the content to the file.
-                File.WriteAllText(filePath, fileContents);
+                File.WriteAllText(filePath, textbox.Text);
                 MessageBox.Show("File saved successfully.", "Save File");
             }
         }
@@ -119,6 +119,35 @@ namespace FileIOExample
             }
 
             return result.ToString();
+        }
+
+        private void btnEncrypt_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textbox.Text))
+            {
+                textbox.Text = Encrypt(textbox.Text);
+            }
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textbox.Text))
+            {
+                textbox.Text = Decrypt(textbox.Text);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textbox.Text))
+            {
+                MessageBox.Show("Please select a file");
+            }
+            else 
+            {
+                textbox.Text = string.Empty;
+            }
+           
         }
     }
 }

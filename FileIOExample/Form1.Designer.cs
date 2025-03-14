@@ -32,12 +32,10 @@
             fileToolStripMenuItem = new ToolStripMenuItem();
             openFileToolStripMenuItem = new ToolStripMenuItem();
             saveFileToolStripMenuItem = new ToolStripMenuItem();
-            txbOriginal = new TextBox();
-            txbEncrypt = new TextBox();
+            textbox = new TextBox();
             btnEncrypt = new Button();
             btnDecrypt = new Button();
-            labOriginal = new Label();
-            labEncrypt = new Label();
+            btnClear = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,7 +44,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(549, 24);
+            menuStrip1.Size = new Size(405, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -71,71 +69,54 @@
             saveFileToolStripMenuItem.Text = "Save File...";
             saveFileToolStripMenuItem.Click += saveFileToolStripMenuItem_Click;
             // 
-            // txbOriginal
+            // textbox
             // 
-            txbOriginal.Location = new Point(83, 72);
-            txbOriginal.Multiline = true;
-            txbOriginal.Name = "txbOriginal";
-            txbOriginal.ReadOnly = true;
-            txbOriginal.Size = new Size(131, 83);
-            txbOriginal.TabIndex = 1;
-            // 
-            // txbEncrypt
-            // 
-            txbEncrypt.Location = new Point(327, 72);
-            txbEncrypt.Multiline = true;
-            txbEncrypt.Name = "txbEncrypt";
-            txbEncrypt.ReadOnly = true;
-            txbEncrypt.Size = new Size(131, 83);
-            txbEncrypt.TabIndex = 2;
+            textbox.Location = new Point(83, 72);
+            textbox.Multiline = true;
+            textbox.Name = "textbox";
+            textbox.ReadOnly = true;
+            textbox.Size = new Size(273, 108);
+            textbox.TabIndex = 1;
             // 
             // btnEncrypt
             // 
-            btnEncrypt.Location = new Point(108, 200);
+            btnEncrypt.Location = new Point(83, 200);
             btnEncrypt.Name = "btnEncrypt";
             btnEncrypt.Size = new Size(75, 23);
             btnEncrypt.TabIndex = 3;
             btnEncrypt.Text = "Encrypt ";
             btnEncrypt.UseVisualStyleBackColor = true;
+            btnEncrypt.Click += btnEncrypt_Click;
             // 
             // btnDecrypt
             // 
-            btnDecrypt.Location = new Point(355, 200);
+            btnDecrypt.Location = new Point(181, 200);
             btnDecrypt.Name = "btnDecrypt";
             btnDecrypt.Size = new Size(75, 23);
             btnDecrypt.TabIndex = 4;
             btnDecrypt.Text = "Decrypt";
             btnDecrypt.UseVisualStyleBackColor = true;
+            btnDecrypt.Click += btnDecrypt_Click;
             // 
-            // labOriginal
+            // btnClear
             // 
-            labOriginal.AutoSize = true;
-            labOriginal.Location = new Point(108, 41);
-            labOriginal.Name = "labOriginal";
-            labOriginal.Size = new Size(96, 15);
-            labOriginal.TabIndex = 5;
-            labOriginal.Text = "Original/Decrypt";
-            // 
-            // labEncrypt
-            // 
-            labEncrypt.AutoSize = true;
-            labEncrypt.Location = new Point(367, 41);
-            labEncrypt.Name = "labEncrypt";
-            labEncrypt.Size = new Size(47, 15);
-            labEncrypt.TabIndex = 6;
-            labEncrypt.Text = "Encrypt";
+            btnClear.Location = new Point(281, 200);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(75, 23);
+            btnClear.TabIndex = 5;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(549, 266);
-            Controls.Add(labEncrypt);
-            Controls.Add(labOriginal);
+            ClientSize = new Size(405, 278);
+            Controls.Add(btnClear);
             Controls.Add(btnDecrypt);
             Controls.Add(btnEncrypt);
-            Controls.Add(txbEncrypt);
-            Controls.Add(txbOriginal);
+            Controls.Add(textbox);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
@@ -152,11 +133,9 @@
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem openFileToolStripMenuItem;
         private ToolStripMenuItem saveFileToolStripMenuItem;
-        private TextBox txbOriginal;
-        private TextBox txbEncrypt;
+        private TextBox textbox;
         private Button btnEncrypt;
         private Button btnDecrypt;
-        private Label labOriginal;
-        private Label labEncrypt;
+        private Button btnClear;
     }
 }
