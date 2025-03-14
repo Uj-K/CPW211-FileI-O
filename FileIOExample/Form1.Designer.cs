@@ -97,6 +97,7 @@
             btnEncrypt.TabIndex = 3;
             btnEncrypt.Text = "Encrypt ";
             btnEncrypt.UseVisualStyleBackColor = true;
+            btnEncrypt.Click += btnEncrypt_Click;
             // 
             // btnDecrypt
             // 

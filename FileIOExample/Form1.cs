@@ -120,5 +120,13 @@ namespace FileIOExample
 
             return result.ToString();
         }
+
+        private void btnEncrypt_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txbOriginal.Text))
+            {
+                txbEncrypt.Text = Encrypt(txbOriginal.Text);
+            }
+        }
     }
 }
