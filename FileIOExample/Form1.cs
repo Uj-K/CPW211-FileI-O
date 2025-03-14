@@ -28,7 +28,7 @@ namespace FileIOExample
                 // Read the file content into a string.
                 string fileContents = File.ReadAllText(filePath);
                 // Display file content in a text box.
-                txbOriginal.Text = fileContents;
+                textbox.Text = fileContents;
             }
         }
 
@@ -123,9 +123,17 @@ namespace FileIOExample
 
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txbOriginal.Text))
+            if (!string.IsNullOrEmpty(textbox.Text))
             {
-                txbEncrypt.Text = Encrypt(txbOriginal.Text);
+                textbox.Text = Encrypt(textbox.Text);
+            }
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textbox.Text))
+            {
+                textbox.Text = Decrypt(textbox.Text);
             }
         }
     }
