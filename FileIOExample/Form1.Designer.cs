@@ -35,6 +35,7 @@
             textbox = new TextBox();
             btnEncrypt = new Button();
             btnDecrypt = new Button();
+            btnClear = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,7 +80,7 @@
             // 
             // btnEncrypt
             // 
-            btnEncrypt.Location = new Point(114, 200);
+            btnEncrypt.Location = new Point(83, 200);
             btnEncrypt.Name = "btnEncrypt";
             btnEncrypt.Size = new Size(75, 23);
             btnEncrypt.TabIndex = 3;
@@ -89,7 +90,7 @@
             // 
             // btnDecrypt
             // 
-            btnDecrypt.Location = new Point(239, 200);
+            btnDecrypt.Location = new Point(181, 200);
             btnDecrypt.Name = "btnDecrypt";
             btnDecrypt.Size = new Size(75, 23);
             btnDecrypt.TabIndex = 4;
@@ -97,11 +98,22 @@
             btnDecrypt.UseVisualStyleBackColor = true;
             btnDecrypt.Click += btnDecrypt_Click;
             // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(281, 200);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(75, 23);
+            btnClear.TabIndex = 5;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(405, 278);
+            Controls.Add(btnClear);
             Controls.Add(btnDecrypt);
             Controls.Add(btnEncrypt);
             Controls.Add(textbox);
@@ -124,5 +136,6 @@
         private TextBox textbox;
         private Button btnEncrypt;
         private Button btnDecrypt;
+        private Button btnClear;
     }
 }

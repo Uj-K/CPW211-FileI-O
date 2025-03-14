@@ -136,5 +136,10 @@ namespace FileIOExample
                 textbox.Text = Decrypt(textbox.Text);
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            textbox.Text = string.Empty;
+        }
     }
 }
