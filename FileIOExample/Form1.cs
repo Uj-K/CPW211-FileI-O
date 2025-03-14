@@ -47,7 +47,7 @@ namespace FileIOExample
                 // Example content to save.
                 string fileContents = "This is an example content to save in the file.";
                 // Write the content to the file.
-                File.WriteAllText(filePath, fileContents);
+                File.WriteAllText(filePath, textbox.Text);
                 MessageBox.Show("File saved successfully.", "Save File");
             }
         }
@@ -139,7 +139,15 @@ namespace FileIOExample
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            textbox.Text = string.Empty;
+            if (string.IsNullOrEmpty(textbox.Text))
+            {
+                MessageBox.Show("Please select a file");
+            }
+            else 
+            {
+                textbox.Text = string.Empty;
+            }
+           
         }
     }
 }
